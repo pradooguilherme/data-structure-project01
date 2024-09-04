@@ -182,13 +182,8 @@ void insertRegister(Register *registro, int numb)
         {
             fseek(data_file, actual_byte_offset, SEEK_SET);
             fread(&tam_data, sizeof(int), 1, data_file);
-            printf("%d\n", tam_data);
             fseek(data_file, sizeof(char), SEEK_CUR);
             fread(&next_byte_offset, sizeof(int), 1, data_file);
-
-            printf("%d\n", next_byte_offset);
-
-            printf("%d\n", tam_reg);
 
             if (tam_reg <= tam_data)
             {
@@ -300,7 +295,7 @@ void removeRegister(Remove *registro, int numb)
             if (strcmp(token, registro[j].id_aluno) == 0)
             {
                 token = strtok(NULL, "#");
-                
+
                 if (strcmp(token, registro[j].sigla_disc) == 0)
                 {
                     fseek(data_file, removed_stack + sizeof(int), SEEK_SET);
