@@ -461,5 +461,5 @@ int main()
     free(remove_register);
     free(insert_register);
 
-    return;
+    return 1;
 }
